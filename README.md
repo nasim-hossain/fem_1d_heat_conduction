@@ -13,13 +13,14 @@ The code is implemented in a general way, allowing users to modify parameters an
 
 A **1D steady-state heat conduction** problem is solved with the following parameters:
 
-- **Cross-sectional area**: \(A = 1 \text{ m}^2\)
-- **Thermal conductivity**: \(\kappa = 5 \text{ W/m}\degree C\)
-- **Constant heat source**: \(s = 100 \text{ W/m}\)
-- **Boundary conditions**:
-  - \(\bar{T} = 0\degree C\) at \(x = 0\)
-  - \(\bar{q} = 0 \text{ W/m}^2\) at \(x = L\)
-- **Length**: \(L = 20 \text{ m}\)
+- **Cross-sectional area**: *A* = 1 m²  
+- **Thermal conductivity**: *κ* = 5 W/m°C  
+- **Constant heat source**: *s* = 100 W/m  
+- **Boundary conditions**:  
+  - **T̅** = 0°C at *x* = 0  
+  - **q̅** = 0 W/m² at *x* = L  
+- **Length**: *L* = 20 m  
+
 
 ### **Problem Schematic**
 
@@ -42,12 +43,10 @@ The FEM solution is implemented using the following steps:
 ---
 
 ## **Results**
-
-After comparing the FEM solution with the exact solution:
-
-- **3 quadratic elements** yield a solution that **almost exactly matches** the exact result.
-- **5 linear elements** are required to achieve a **good match** with the exact result.
-- This confirms that the **FEM code works correctly** for different element types and numbers.
+After plotting the FEM solution against exact solution, it is observed that result of 3 quadratic elements
+almost exactly matches with the exact solution. But for linear element, it takes 5 elements to get a good match
+with the exact result. It is clear from the result data that our FEM code is fully cable of solving 1D linear heat
+conduction for variable number of elements and linear and/or quadratic shape function.
 
 ### **Result Plot**
 
