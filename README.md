@@ -43,10 +43,7 @@ The FEM solution is implemented using the following steps:
 ---
 
 ## **Results**
-After plotting the FEM solution against exact solution, it is observed that result of 3 quadratic elements
-almost exactly matches with the exact solution. But for linear element, it takes 5 elements to get a good match
-with the exact result. It is clear from the result data that our FEM code is fully cable of solving 1D linear heat
-conduction for variable number of elements and linear and/or quadratic shape function.
+After plotting the FEM solution against the exact solution, it is observed that the result with three quadratic elements almost exactly matches the exact solution. However, for linear elements, it takes five elements to achieve a good match with the exact result. The result data clearly demonstrate that our FEM code is fully capable of solving 1D linear heat conduction for a variable number of elements using either linear or quadratic shape functions.
 
 ### **Result Plot**
 
