@@ -1,23 +1,55 @@
-# FEM_1d_heat_conduction
-A linear 1D heat conduction problem was solved using finite element method (FEM). FEM code was written in such a way that variable number of elements and linear or quadratic shape function can be used to solve the problem. A particular case given below is solved in the code, but values can be changed to solve any linear 1d heat conduction problem.
+# 1D Heat Conduction using Finite Element Method (FEM)
 
-In this problem the cross-sectional area is A= 1 m2, thermal conductivity κ = 5 W/m°C, the constant heat source is s=100 W/m, 𝑇 " = 0°C and 𝑞"= 0 W/m2. Length is L=20m
+This repository contains a **Finite Element Method (FEM) solver** for a **1D heat conduction problem** with support for:
+
+- Variable number of elements
+- Linear or quadratic shape functions
+
+The code is implemented in a general way, allowing users to modify parameters and solve different 1D heat conduction problems.
+
+---
+
+## **Problem Definition**
+
+A **1D steady-state heat conduction** problem is solved with the following parameters:
+
+- **Cross-sectional area**: \(A = 1 \text{ m}^2\)
+- **Thermal conductivity**: \(\kappa = 5 \text{ W/m}\degree C\)
+- **Constant heat source**: \(s = 100 \text{ W/m}\)
+- **Boundary conditions**:
+  - \(\bar{T} = 0\degree C\) at \(x = 0\)
+  - \(\bar{q} = 0 \text{ W/m}^2\) at \(x = L\)
+- **Length**: \(L = 20 \text{ m}\)
+
+### **Problem Schematic**
 
 ![image](https://github.com/user-attachments/assets/a3a638db-5e72-402a-9e13-d5bfd3572c16)
 
-Steps taken to solve the problem is:
-      1. Generating Mesh
-      2. Generating connectivity matrix for bookkeeping
-      3. Calculating Shape function [N], derivative of shape function [B] and Jacobian
-      4. Calculating element level stiffness matrix and force vector (using gauss quadrature)
-      5. Using connectivity matrix to generate global stiffness matrix and force vector
-      6. Applying boundary condition
-      7. Solving for temperature over the length at each node
+---
 
-# Results:
-After plotting the FEM solution against exact solution, it is observed that result of 3 quadratic elements
-almost exactly matches with the exact solution. But for linear element, it takes 5 elements to get a good match
-with the exact result. It is clear from the result data that our FEM code is fully cable of solving 1D linear heat
-conduction for variable number of elements and linear and/or quadratic shape function.
+## **Solution Approach**
+
+The FEM solution is implemented using the following steps:
+
+1. **Mesh Generation**: Discretizing the domain into elements.
+2. **Generating Connectivity Matrix**: Bookkeeping element-node connectivity.
+3. **Calculating Shape Functions**: Computing shape function \([N]\), derivative \([B]\), and Jacobian.
+4. **Element Stiffness & Force Calculation**: Using **Gauss quadrature** to compute element-level matrices.
+5. **Assembly of Global Matrices**: Constructing global stiffness matrix and force vector.
+6. **Applying Boundary Conditions**: Implementing essential and natural boundary conditions.
+7. **Solving for Nodal Temperatures**: Obtaining temperature distribution along the length.
+
+---
+
+## **Results**
+
+After comparing the FEM solution with the exact solution:
+
+- **3 quadratic elements** yield a solution that **almost exactly matches** the exact result.
+- **5 linear elements** are required to achieve a **good match** with the exact result.
+- This confirms that the **FEM code works correctly** for different element types and numbers.
+
+### **Result Plot**
 
 ![image](https://github.com/user-attachments/assets/7068af78-e229-4283-b38b-c2f5fa091e3f)
+
